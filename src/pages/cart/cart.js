@@ -27,7 +27,7 @@ function Cart(props) {
         ListEmptyComponent={
           <View style={cart_list.emptyList_container}>
             <Icon name='cart-remove' size={100} style={cart_list.emptyList_icon}/>
-            <Text style={cart_list.emptyList_text}>Sepetinzde ürün bulunmamaktadır!</Text>
+            <Text style={cart_list.emptyList_text}>Sepetinizde ürün bulunmamaktadır!</Text>
             <CustomButton title='Ürünlere Git' onClick={()=>props.navigation.navigate('ProductsScreen')}/>
           </View>
       }

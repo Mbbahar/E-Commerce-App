@@ -3,17 +3,17 @@ import {TouchableOpacity, Text, Image} from 'react-native';
 import {product_item} from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export function ProductItem({item, onSelect, onLike}) {
+export function FavoriteItem({item, onRemove}) {
   return (
-    <TouchableOpacity style={product_item.container} onPress={onSelect}>
+    <TouchableOpacity style={product_item.container}>
       <Image style={product_item.image} source={{uri: item.image}} />
       <Text style={product_item.text} numberOfLines={2}>{item.title}</Text>
       <Icon
           style={{alignSelf: 'flex-end'}}
-          name="heart-outline"
+          name="heart"
           size={25}
           color="tomato"
-          onPress={onLike}
+          onPress={onRemove}
         />
     </TouchableOpacity>
   );
