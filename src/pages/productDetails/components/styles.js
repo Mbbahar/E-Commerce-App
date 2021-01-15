@@ -8,6 +8,7 @@ const details_item = StyleSheet.create({
         backgroundColor:'white',
     },
     image:{
+        flex:1,
         height:device_size.height/3,
         width:device_size.width/2,
         marginVertical:10,

@@ -1,21 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SafeAreaView, FlatList, Text} from 'react-native';
-import { useAsyncStorage} from '../../hooks';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {FavoriteItem} from './components';
 import { Header} from '../../components';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 const key = '@FAVORITE';
 
 function Favorites(props) {
+  const dispatch = useDispatch();
   const favlist = useSelector((state) => state.favorites);
 
-  const [storageItem, updateStorageItem, clearStorageItem]  = useAsyncStorage(key);
-  const renderPost = ({item}) => <FavoriteItem item={item} onRemove={() => clearStorageItem(item)} />;
+  async function getItem() {
+    const data = await AsyncStorage.getItem(key);
+
+    if (data) {
+      dispatch({type: 'SET_FAVORITE', payload: {fav: JSON.parse(data)}});
+      //console.log('setfav',data);
+    }
+  }
+  useEffect(() => {
+    getItem()
+  }, [])
+
+  async function onRemove(item) {
+    dispatch({type: 'REMOVE_TO_FAVORITE', payload: {data: item}})
+    const favListStr = await JSON.stringify(favlist);
+    await AsyncStorage.setItem('@FAVORITE', favListStr);
+  }
+
+  const renderPost = ({item}) => <FavoriteItem item={item} onRemove={() => onRemove(item)} />;
 
   const renderHeader = () => (<Header title='Favoriler'/>);
 
-  console.log('favlist', favlist)
   return (
     <SafeAreaView>
       <FlatList

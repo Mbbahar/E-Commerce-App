@@ -40,4 +40,24 @@ const custom_button = StyleSheet.create({
     },
 });
 
-export {header, footer, custom_button};
+const search_bar = StyleSheet.create({
+    container: {
+      margin: 10,
+      borderRadius: 10,
+      flexDirection: 'row',
+    },
+    iconContainer: {
+      padding: 5,
+      borderBottomWidth: 1,
+      borderColor: '#353233',
+      marginRight: 10,
+    },
+    inputContainer: {
+      borderColor: '#353233',
+      borderBottomWidth: 1,
+      flex: 1,
+      marginLeft: 10,
+    },
+  });
+
+export {header, footer, custom_button, search_bar};

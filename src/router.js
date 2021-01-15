@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Favorites, Products, Cart, ProductDetails} from './pages';
+import {Favorites, Products, Cart, ProductDetails, categoryProducts} from './pages';
 import MainProvider from './context/MainProvider';
 
 const Tab = createBottomTabNavigator();
@@ -13,6 +13,7 @@ function MainStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown:false}}>
       <Stack.Screen name="ProductsScreen" component={Products} />
+      <Stack.Screen name="categoryProductsScreen" component={categoryProducts} />
       <Stack.Screen name="DetailsScreen" component={ProductDetails} />
     </Stack.Navigator>
   );

@@ -4,22 +4,43 @@ function reducer(state, action) {
       const {products} = action.payload;
       return {...state, products};
 
-    case 'SET_FAVORITE':
-      const {fav} = action.payload;
-      return {...state, favorites: [...state.favorites, fav]};
+      case 'SET_CATEGORIES':
+      const {categories} = action.payload;
+      return {...state, categories};
 
-    case 'ADD_TO_FAVORITE':
-      const {data} = action.payload;
-      return {
-        ...state,
-        favorites: [...state.favorites, data],
-      };
+    // case 'UPDATE_PRODUCTS':
+    //   const {search} = action.payload;
+    //   const filteredList = state.search_products.filter((item) => {
+    //     const itemName = item.category.toUpperCase();
+    //     const searchWord = search.toUpperCase();
 
-    case 'REMOVE_TO_FAVORITE':
-      const {data: Data} = action.payload;
-      const i = state.favorites.findIndex((x) => x.id === Data.id);
-      state.favorites.splice(i, 1);
-      return {...state, favorites: [...state.favorites]};
+    //     return itemName.indexOf(searchWord) > -1;
+    //   });
+    //   return {
+    //     ...state,
+    //     products: filteredList,
+    //   };
+
+    // case 'SET_SEARCH_PRODUCTS':
+    //   const {search_products} = action.payload;
+    //   return {...state, search_products};
+
+      case 'SET_FAVORITE':
+        const {fav} = action.payload;
+        return {...state, favorites: fav};
+  
+      case 'ADD_TO_FAVORITE':
+        const {data} = action.payload;
+        return {
+          ...state,
+          favorites: [...state.favorites, data],
+        };
+  
+      case 'REMOVE_TO_FAVORITE':
+        const {data: Data} = action.payload;
+        const i = state.favorites.findIndex((x) => x.id === Data.id);
+        state.favorites.splice(i, 1);
+        return {...state, favorites: [...state.favorites]};
 
     case 'ADD_TO_CART':
       const {item} = action.payload;
