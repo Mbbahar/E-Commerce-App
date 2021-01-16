@@ -8,29 +8,60 @@ const cart_item = StyleSheet.create({
     borderRadius: 5,
     borderColor: 'tomato',
     backgroundColor: 'white',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  image:{
-    borderRadius:100,
-    width:50,
-    height:50
+  image: {
+    borderRadius: 100,
+    width: 50,
+    height: 50,
   },
-  details_container:{
-    flex:1,
-    marginLeft:10,
+  details_container: {
+    flex: 1,
+    marginLeft: 10,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom:5,
-
+    marginBottom: 5,
   },
-  price:{
-    color:'grey',
-    fontWeight:'bold',
+  price: {
+    color: 'grey',
+    fontWeight: 'bold',
   },
 });
 
-export {cart_item};
+const order_history = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 30,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+  },
+  button_container: {
+    backgroundColor: '#0006',
+    borderRadius: 5,
+    padding: 10,
+    alignSelf: 'center',
+    marginBottom: 10,
+  },
+  button_text: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 16,
+  },
+  modalText: {
+    marginBottom: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
+
+export {cart_item, order_history};

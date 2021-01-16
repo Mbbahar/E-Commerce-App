@@ -17,7 +17,6 @@ const header = StyleSheet.create({
 
 const footer = StyleSheet.create({
     container:{ 
-        flex:1,
         flexDirection:'row',
         alignItems:'flex-end',
         justifyContent:'space-between',
