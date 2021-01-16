@@ -30,6 +30,7 @@ function Router() {
               setIcon(focused, color, route),
             tabBarLabel: ({color}) => 
               setLabel(color, route),
+              
           })}
           tabBarOptions={{
             activeTintColor: 'tomato',

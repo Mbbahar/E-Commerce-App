@@ -9,10 +9,8 @@ const API_URL = 'https://fakestoreapi.com/products/category/';
 
 function categoryProducts(props) {
   const {category_name} = props.route.params;
-
   const {data, loading, error} = useFetch(API_URL+category_name);
 
-  //console.log('category_name', API_URL+category_name)
   if (loading) {
     return <Loading />;
   }

@@ -10,7 +10,11 @@ const API_URL_CATEGORIES = 'https://fakestoreapi.com/products/categories';
 
 function Products(props) {
   const {data, loading, error} = useFetch(API_URL_PRODUCTS);
-  const {data: categories, loading: looding_category, error: error_category} = useFetch(API_URL_CATEGORIES);
+  const {
+    data: categories,
+    loading: looding_category,
+    error: error_category,
+  } = useFetch(API_URL_CATEGORIES);
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.products);
@@ -32,10 +36,14 @@ function Products(props) {
     />
   );
 
-  const renderHeader = () => <Banner categories={categories} 
-  //onPress={(i) => console.log('asdd', i)} 
-  onPress={(i) => props.navigation.navigate('categoryProductsScreen', {category_name: i})}
-  />;
+  const renderHeader = () => (
+    <Banner
+      categories={categories}
+      onPress={(i) =>
+        props.navigation.navigate('categoryProductsScreen', {category_name: i})
+      }
+    />
+  );
 
   return (
     <SafeAreaView>
