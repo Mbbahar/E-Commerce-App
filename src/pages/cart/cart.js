@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {CustomButton, Header, Footer} from '../../components';
 import {OrderHistory, CartItem} from './components';
-import {cart_list} from './styles';
+import {cart_list} from './components/styles';
 
 function Cart(props) {
   const cartlist = useSelector((state) => state.cart);
@@ -19,7 +19,6 @@ function Cart(props) {
     } else {
       orders = JSON.parse(orders);
     }
-    // const titles=cartlist.map(item =>item.title);
     orders.push({
       Order: cartlist.map((item) => item.title),
       TotalPrice: totalPrice,
@@ -29,7 +28,6 @@ function Cart(props) {
     await AsyncStorage.setItem('@ORDERS', orders);
     Alert.alert('* Bilgi *', 'Siparişiniz alınmıştır');
     dispatch({type: 'SUBMIT_ORDER'});
-    // console.log('Push',JSON.parse(orders)[0].TotalPrice);
   }
 
   const renderCart = ({item}) => (

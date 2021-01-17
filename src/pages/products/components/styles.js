@@ -28,4 +28,22 @@ const product_item = StyleSheet.create({
   },
 });
 
-export {product_item};
+const banner = StyleSheet.create({
+  image_background: {
+    height: 50,
+    width: 150,
+    justifyContent: 'center',
+    margin: 10,
+  },
+  image: {
+    borderRadius: 100,
+  },
+  text: {
+    alignSelf: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+});
+
+export {product_item, banner};

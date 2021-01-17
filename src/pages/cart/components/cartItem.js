@@ -7,9 +7,15 @@ export function CartItem({item, onDelete}) {
   return (
     <TouchableWithoutFeedback>
       <View style={cart_item.container}>
-        <Image source={{uri:item.image}} style={cart_item.image} resizeMode='contain'/>
+        <Image
+          source={{uri: item.image}}
+          style={cart_item.image}
+          resizeMode="contain"
+        />
         <View style={cart_item.details_container}>
-          <Text style={cart_item.title} numberOfLines={1}>{item.title}</Text>
+          <Text style={cart_item.title} numberOfLines={1}>
+            {item.title}
+          </Text>
           <Text style={cart_item.price}>{item.price} $</Text>
         </View>
         <Icon

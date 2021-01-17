@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
 import LottieView from 'lottie-react-native';
@@ -16,7 +15,7 @@ export function Loading() {
         autoPlay
         source={require('../assets/loading.json')}
       />
-      <Text style={{ color:'white', fontWeight: 'bold'}}>Loading...</Text>
+      <Text style={{color: 'white', fontWeight: 'bold'}}>Loading...</Text>
     </SafeAreaView>
   );
 }

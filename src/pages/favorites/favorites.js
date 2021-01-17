@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
+import {SafeAreaView, FlatList, View, Text} from 'react-native';
 import {FavoriteItem} from './components';
-import {Header} from '../../components';
-import {useSelector, useDispatch} from 'react-redux';
+import {Header, CustomButton} from '../../components';
+import {useSelector} from 'react-redux';
 import {useAsyncStorage} from '../../hooks';
 
 const key = '@FAVORITE';
@@ -24,6 +24,20 @@ function Favorites(props) {
 
   const renderHeader = () => <Header title="Favoriler" />;
 
+  const EmptyComponent = () => {
+    return (
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={{color: 'grey', fontSize: 18, marginBottom: 50}}>
+          Henüz favorilere ürün eklemediniz!
+        </Text>
+        <CustomButton
+          title="Ürünlere Git"
+          onClick={() => props.navigation.navigate('ProductsScreen')}
+        />
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView>
       <FlatList
@@ -31,6 +45,7 @@ function Favorites(props) {
         keyExtractor={(_, i) => i.toString()}
         data={favlist}
         renderItem={renderPost}
+        ListEmptyComponent={EmptyComponent}
       />
     </SafeAreaView>
   );

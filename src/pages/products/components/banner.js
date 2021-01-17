@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   FlatList,
-  View,
   Text,
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
+import {banner} from './styles';
 
 export function Banner({categories, onPress}) {
   const renderProduct = ({item}) => (
-    <TouchableOpacity onPress={() => onPress(item)} >
+    <TouchableOpacity onPress={() => onPress(item)}>
       <ImageBackground
         source={require('../../../assets/shop.jpg')}
-        style={{height: 50, width: 150, justifyContent: 'center', margin: 10}}
-        imageStyle={{borderRadius: 100}}>
-        <Text style={{alignSelf: 'center', fontSize: 20, fontWeight: 'bold', color:'white'}}>
-          {item}
-        </Text>
+        style={banner.image_background}
+        imageStyle={banner.image}>
+        <Text style={banner.text}>{item}</Text>
       </ImageBackground>
     </TouchableOpacity>
   );
@@ -25,7 +23,6 @@ export function Banner({categories, onPress}) {
   return (
     <SafeAreaView>
       <FlatList
-        // ListHeaderComponent={renderHeader}
         data={categories}
         keyExtractor={(_, i) => i.toString()}
         renderItem={renderProduct}

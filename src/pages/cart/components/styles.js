@@ -82,8 +82,6 @@ const history_item = StyleSheet.create({
     padding: 10,
     backgroundColor: 'white',
     borderRadius: 20,
-    // borderColor: 'tomato',
-    // borderWidth: 1,
   },
   item_container: {
     margin: 5,
@@ -114,4 +112,32 @@ const history_item = StyleSheet.create({
   },
 });
 
-export {cart_item, order_history, history_item};
+const cart_list = StyleSheet.create({
+  Container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  emptyList_container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  emptyList_icon: {
+    marginVertical: 50,
+    color: 'tomato',
+    padding: 5,
+  },
+  emptyList_text: {
+    color: 'grey',
+    fontSize: 18,
+    marginBottom: 50,
+  },
+  price: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'tomato',
+    marginBottom: 10,
+    marginLeft: 30,
+  },
+});
+
+export {cart_item, order_history, history_item, cart_list};

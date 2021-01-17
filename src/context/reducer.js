@@ -8,23 +8,6 @@ function reducer(state, action) {
       const {categories} = action.payload;
       return {...state, categories};
 
-    // case 'UPDATE_PRODUCTS':
-    //   const {search} = action.payload;
-    //   const filteredList = state.search_products.filter((item) => {
-    //     const itemName = item.category.toUpperCase();
-    //     const searchWord = search.toUpperCase();
-
-    //     return itemName.indexOf(searchWord) > -1;
-    //   });
-    //   return {
-    //     ...state,
-    //     products: filteredList,
-    //   };
-
-    // case 'SET_SEARCH_PRODUCTS':
-    //   const {search_products} = action.payload;
-    //   return {...state, search_products};
-
     case 'SET_FAVORITE':
       const {fav} = action.payload;
       return {...state, favorites: fav};
@@ -54,7 +37,6 @@ function reducer(state, action) {
       const {item: Item} = action.payload;
       const index = state.cart.findIndex((x) => x.id === Item.id);
       state.cart.splice(index, 1);
-      // const newCart= state.cart.filter((cartItem)=> cartItem.id != Item.id);
       return {...state, cart: [...state.cart], total: state.total - Item.price};
 
     case 'SUBMIT_ORDER':

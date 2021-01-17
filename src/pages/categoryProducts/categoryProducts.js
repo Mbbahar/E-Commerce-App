@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
-import {SafeAreaView, FlatList, View} from 'react-native';
+import React from 'react';
+import {SafeAreaView, FlatList} from 'react-native';
 import {useFetch} from '../../hooks';
-import {ProductItem, Banner} from './components';
-import {useDispatch, useSelector} from 'react-redux';
-import {Header, Loading, Error, SearchBar} from '../../components';
+import {ProductItem} from './components';
+import {Header, Loading, Error} from '../../components';
 
 const API_URL = 'https://fakestoreapi.com/products/category/';
 
 function categoryProducts(props) {
   const {category_name} = props.route.params;
-  const {data, loading, error} = useFetch(API_URL+category_name);
+  const {data, loading, error} = useFetch(API_URL + category_name);
 
   if (loading) {
     return <Loading />;
@@ -18,8 +17,9 @@ function categoryProducts(props) {
     return <Error />;
   }
   if (data) {
-    // dispatch({type: 'SET_PRODUCTS', payload: {products: data}});
+    console.log('data', data);
   }
+
   const renderProduct = ({item}) => (
     <ProductItem
       item={item}
@@ -28,7 +28,7 @@ function categoryProducts(props) {
   );
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <Header title={category_name} />
       <FlatList
         data={data}

@@ -13,7 +13,6 @@ export function OrderHistory() {
     const history = await AsyncStorage.getItem('@ORDERS');
     const parsedHistory = JSON.parse(history);
     setStorageOrder(parsedHistory);
-    // console.log(parsedHistory)
   }
 
   const renderHistory = ({item}) => <HistoryItem item={item} />;
@@ -24,7 +23,11 @@ export function OrderHistory() {
         Sipariş Geçmişiniz Bulunmamaktadır !
       </Text>
       <View style={order_history.empty_list_animation}>
-        <LottieView autoPlay source={require('../../../assets/history.json')} />
+        <LottieView
+          autoPlay
+          loop={false}
+          source={require('../../../assets/history.json')}
+        />
       </View>
     </View>
   );

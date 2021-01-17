@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {SafeAreaView, FlatList, View} from 'react-native';
+import React from 'react';
+import {SafeAreaView, FlatList} from 'react-native';
 import {useFetch} from '../../hooks';
 import {ProductItem, Banner} from './components';
 import {useDispatch, useSelector} from 'react-redux';
-import {Header, Loading, Error, SearchBar} from '../../components';
+import {Header, Loading, Error} from '../../components';
 
 const API_URL_PRODUCTS = 'https://fakestoreapi.com/products/';
 const API_URL_CATEGORIES = 'https://fakestoreapi.com/products/categories';
@@ -46,13 +46,14 @@ function Products(props) {
   );
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <Header title="Ürünler" />
       <FlatList
         ListHeaderComponent={renderHeader}
         data={productList}
         keyExtractor={(_, i) => i.toString()}
         renderItem={renderProduct}
+        numColumns={2}
       />
     </SafeAreaView>
   );
