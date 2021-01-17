@@ -58,7 +58,7 @@ const order_history = StyleSheet.create({
     fontSize: 16,
   },
   empty_list_container: {
-    padding: 30,
+    padding: 20,
   },
   empty_list_text: {
     fontSize: 16,

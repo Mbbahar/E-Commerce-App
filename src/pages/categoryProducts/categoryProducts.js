@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 import {useFetch} from '../../hooks';
-import {ProductItem} from './components';
+import {ProductItem} from '../../pages/products/components';
 import {Header, Loading, Error} from '../../components';
 
 const API_URL = 'https://fakestoreapi.com/products/category/';
@@ -34,6 +34,7 @@ function categoryProducts(props) {
         data={data}
         keyExtractor={(_, i) => i.toString()}
         renderItem={renderProduct}
+        numColumns={2}
       />
     </SafeAreaView>
   );

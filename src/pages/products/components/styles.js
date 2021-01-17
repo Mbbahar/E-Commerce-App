@@ -1,30 +1,37 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-const deviceSize = Dimensions.get('window');
+const device_size = Dimensions.get('window');
 
 const product_item = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: 'white',
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 5,
-    borderTopLeftRadius: 75,
-    borderBottomLeftRadius: 75,
-    padding: 5,
-    margin: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
+    margin: 10,
+    borderRadius: 10,
   },
   image: {
-    width: 75,
-    height: 75,
-    borderRadius: 75,
-    resizeMode: 'contain',
-  },
-  text: {
     flex: 1,
-    marginHorizontal: 5,
-    fontSize: 20,
+    height: device_size.height / 5,
+    width: device_size.width / 2,
+    margin: 5,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  title_container: {
+    paddingTop: 15,
+    borderTopColor: '#ff634750',
+    borderTopWidth: 1,
+    margin: 10,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#C0C0C0',
+  },
+  price: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#91a6bb',
   },
 });
 
