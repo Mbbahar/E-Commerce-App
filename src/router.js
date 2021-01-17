@@ -19,10 +19,7 @@ function MainStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="ProductsScreen" component={Products} />
-      <Stack.Screen
-        name="categoryProductsScreen"
-        component={categoryProducts}
-      />
+      <Stack.Screen name="categoryProductsScreen" component={categoryProducts} />
       <Stack.Screen name="DetailsScreen" component={ProductDetails} />
     </Stack.Navigator>
   );

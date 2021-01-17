@@ -6,7 +6,7 @@ import {Header} from '../../../components/header';
 import {details_item} from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export function DetailsItem({item, AddToCart, onLike}) {
+export function DetailsItem({item, AddToCart, onLike, isPressed}) {
   return (
     <SafeAreaView style={details_item.container}>
       <Header title="Ürün detayı" />
@@ -15,7 +15,7 @@ export function DetailsItem({item, AddToCart, onLike}) {
         <Image source={{uri: item.image}} style={details_item.image} />
         <Icon
           style={{alignSelf: 'flex-start', marginRight: 10}}
-          name="heart-outline"
+          name= {isPressed ? "heart" : "heart-outline"}
           size={25}
           color="tomato"
           onPress={onLike}
