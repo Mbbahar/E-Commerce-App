@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 const cart_item = StyleSheet.create({
   container: {
@@ -39,10 +39,10 @@ const order_history = StyleSheet.create({
     marginTop: 30,
   },
   modalView: {
-    margin: 20,
-    backgroundColor: 'white',
+    width: Dimensions.get('window').width * 0.9,
+    margin: 15,
+    backgroundColor: '#0001',
     borderRadius: 20,
-    padding: 35,
   },
   button_container: {
     backgroundColor: '#0006',
@@ -57,11 +57,61 @@ const order_history = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
   },
-  modalText: {
-    marginBottom: 20,
+  empty_list_container: {
+    padding: 30,
+  },
+  empty_list_text: {
+    fontSize: 16,
     fontWeight: 'bold',
-    textAlign: 'center',
+    marginBottom: 25,
+    alignSelf: 'center',
+  },
+  empty_list_animation: {
+    width: 150,
+    height: 150,
+    backgroundColor: 'tomato',
+    alignSelf: 'center',
+    borderRadius: 100,
   },
 });
 
-export {cart_item, order_history};
+const history_item = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 10,
+    padding: 10,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    // borderColor: 'tomato',
+    // borderWidth: 1,
+  },
+  item_container: {
+    margin: 5,
+    padding: 5,
+    borderColor: '#0001',
+    borderBottomWidth: 2,
+  },
+  item: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  price_conteiner: {
+    flexDirection: 'row',
+    paddingTop: 3,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  price_title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  price: {
+    color: 'tomato',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+});
+
+export {cart_item, order_history, history_item};

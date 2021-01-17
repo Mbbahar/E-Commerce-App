@@ -68,7 +68,6 @@ function Cart(props) {
               <OrderHistory />
             </View>
           }
-          // ListFooterComponent={cartlist.length === 0 && <OrderHistory/>}
         />
       </View>
       {cartlist.length != 0 ? (
