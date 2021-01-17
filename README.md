@@ -4,7 +4,7 @@ An application example where users can purchase products.<br />
 
 <table>
   <tr>
-    <td><img src="shopping.gif" width=270 height=480></td>
+    <td><img src="shopping.gif" width=350 height=600></td>
   </tr>
  </table>
 
